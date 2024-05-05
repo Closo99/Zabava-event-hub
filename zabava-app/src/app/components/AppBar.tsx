@@ -16,9 +16,10 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import Image from 'next/image';
 
 const CustomSearchIcon = styled(SearchIcon)(({ theme }) => ({
-  color: 'grey', // Altere para a cor desejada
+  color: 'grey'
 }));
 
 const Search = styled('div')(({ theme }) => ({
@@ -174,11 +175,16 @@ export default function PrimaryAppBar() {
           >
             <MenuIcon />
           </IconButton>
+          <Image src="/zabava-logo.png"
+                width={30}
+                height={30}
+                loading='lazy'
+                alt="Logo Zabava" />
           <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, color: 'black' }}
+            sx={{ display: { xs: 'none', sm: 'block' }, ml: 1, color: 'black' }}
           >
             Zabava
           </Typography>
