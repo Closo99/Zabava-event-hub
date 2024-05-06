@@ -179,7 +179,8 @@ export default function PrimaryAppBar() {
                 width={30}
                 height={30}
                 loading='lazy'
-                alt="Logo Zabava" />
+                alt="Logo Zabava"
+                id='logo-zabava' />
           <Typography
             variant="h6"
             noWrap

@@ -4,6 +4,7 @@ import PrimaryAppBar from "./components/AppBar";
 import './page.css' 
 import WovenImageList from './components/WovenImageList';
 import Image from 'next/image';
+import Footer from './components/footer';
 
 export default function Home() {
 
@@ -47,36 +48,56 @@ export default function Home() {
             </div>
           </div>
           <div className="home-middle-content">
-            <Image
-                  src="/fast-clock.png"
-                  width={100}
-                  height={100}
-                  loading='lazy'
-                  alt="Fast clock image"
-                  id='fast-clock-image' />
-              <p>MAIS RAPIZES PARA SEUS EVENTOS</p>
-              <Image
-                  src="/eficiency-icon.png"
-                  width={100}
-                  height={100}
-                  loading='lazy'
-                  alt="Eficiency icon image"
-                  id='eficiency-icon-image' />
-              <p>FLUIDEZ, EFICIÊNCIA E COMODIDADE PARA CADASTRAR SEUS EVENTOS</p>
-              <Image
-                  src="/security-icon.png"
-                  width={100}
-                  height={100}
-                  loading='lazy'
-                  alt="Security icon image"
-                  id='security-icon-image' />
-              <p>SEGURANÇA NA HORA DE MONTAR SUA EXPERIÊNCIA</p>              
+              <div id='fast-clock-container'>
+                <Image
+                    src="/fast-clock.png"
+                    width={100}
+                    height={100}
+                    loading='lazy'
+                    alt="Fast clock image"
+                    id='fast-clock-image' />
+                <p>MAIS RAPIZES PARA SEUS EVENTOS</p>
+              </div>
+              <div id='eficiency-icon-container'>
+                <Image
+                    src="/eficiency-icon.png"
+                    width={100}
+                    height={100}
+                    loading='lazy'
+                    alt="Eficiency icon image"
+                    id='eficiency-icon-image' />
+                <p>FLUIDEZ, EFICIÊNCIA E COMODIDADE PARA CADASTRAR SEUS EVENTOS</p>
+              </div>
+              <div id='security-icon-container'>
+                <Image
+                    src="/security-icon.png"
+                    width={100}
+                    height={100}
+                    loading='lazy'
+                    alt="Security icon image"
+                    id='security-icon-image' />
+                <p>SEGURANÇA NA HORA DE MONTAR SUA EXPERIÊNCIA</p>
+              </div>              
           </div>
           <div className="home-botton-content">
+            <h2>Quem usa aprova!</h2>
+            <blockquote className="q-card q-card-color-1">
+              <div className="content">Como produtor de eventos, sempre estou à procura de ferramentas que tornem o processo de organização mais eficiente e fluido. Recentemente, descobri um site incrível que revolucionou completamente a maneira como eu crio e gerencio meus eventos. Desde a facilidade de design e personalização até a comunicação!</div>
+              <div className='author'>Alex Maciel, produtor de eventos</div>
+            </blockquote>
 
+            <blockquote className="q-card q-card-color-2">
+              <div className="content">Descobrir este site foi uma verdadeira bênção! Com sua interface intuitiva e recursos eficazes, agora consigo gerenciar minhas propriedades e reservas de forma mais eficiente do que nunca. Desde a criação de listagens atrativas até a comunicação fluida com os organizadores de eventos, este site tornou a locação de meus espaços uma experiência sem complicações.</div>
+              <div className='author'>Diego Bragança, dono de casa de evento</div>
+            </blockquote>
+
+            <blockquote className="q-card q-card-color-3">
+              <div className="content">A facilidade de comunicação e a transparência nas transações me permitiram expandir significativamente minha agenda de trabalho, participando de mais eventos do que nunca.</div>
+              <div className='author'>Samuel Castro, barman freelancer</div>
+            </blockquote>
           </div>
         </div>
-      <footer></footer>
+        <Footer />
     </main>
   );
 }
