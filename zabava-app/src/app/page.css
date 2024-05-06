@@ -5,9 +5,7 @@ html {
 }
 
 .home-main {
-    background-color: white;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
+    
 }
 
 /*after header*/
@@ -16,11 +14,14 @@ html {
 }
 
 .home-top-content{
+    background-color: white;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     display: flex;
     flex-wrap: wrap;
     gap:20px;
+    align-items: center;
     justify-content: center;
-    margin: 42px;
 }
 
 .home-call-to-action {
@@ -79,7 +80,7 @@ html {
   .organizar-evento:hover {
     box-shadow: 0 0 0 12px transparent;
     color: #000000;
-    border-radius: 12px;
+    border-color: #F16813;
   }
 
   .organizar-evento:active {
@@ -184,16 +185,37 @@ html {
     height: 220px;
     opacity: 1;
   }
-  
+
+  .woven-image {
+    border-radius: 16px;
+  }
+
+  .woven-image:hover {
+    border-radius: 0px;
+    scale: 1.002;
+    -webkit-box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.24); 
+    box-shadow: 1px 1px 8px 0px rgba(0,0,0,0.24);
+    transition: all 0.8s
+  }
 
 .home-top-image-box {
-
+  margin: 6px;
 }
 
 .home-middle-content {
-
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 6px;
 }
 
-.home-botton-content {
+.home-middle-content p {
+  color: white;
+  max-width: 300PX;
+}
 
+.home-botton-content  {
+  
 }

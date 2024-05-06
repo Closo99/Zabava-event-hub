@@ -3,6 +3,7 @@ import {useRouter } from 'next/navigation'
 import PrimaryAppBar from "./components/AppBar";
 import './page.css' 
 import WovenImageList from './components/WovenImageList';
+import Image from 'next/image';
 
 export default function Home() {
 
@@ -46,7 +47,30 @@ export default function Home() {
             </div>
           </div>
           <div className="home-middle-content">
-
+            <Image
+                  src="/fast-clock.png"
+                  width={100}
+                  height={100}
+                  loading='lazy'
+                  alt="Fast clock image"
+                  id='fast-clock-image' />
+              <p>MAIS RAPIZES PARA SEUS EVENTOS</p>
+              <Image
+                  src="/eficiency-icon.png"
+                  width={100}
+                  height={100}
+                  loading='lazy'
+                  alt="Eficiency icon image"
+                  id='eficiency-icon-image' />
+              <p>FLUIDEZ, EFICIÊNCIA E COMODIDADE PARA CADASTRAR SEUS EVENTOS</p>
+              <Image
+                  src="/security-icon.png"
+                  width={100}
+                  height={100}
+                  loading='lazy'
+                  alt="Security icon image"
+                  id='security-icon-image' />
+              <p>SEGURANÇA NA HORA DE MONTAR SUA EXPERIÊNCIA</p>              
           </div>
           <div className="home-botton-content">
 

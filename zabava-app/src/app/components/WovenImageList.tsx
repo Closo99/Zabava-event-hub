@@ -4,7 +4,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 
 export default function WovenImageList() {
   return (
-    <ImageList sx={{ width: 300, height: 450 }} variant="woven" cols={3} gap={4}>
+    <ImageList sx={{ width: 302, height: 450 }} variant="woven" cols={3} gap={4}>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
           <img
@@ -12,6 +12,7 @@ export default function WovenImageList() {
             src={`${item.img}?w=161&fit=crop&auto=format`}
             alt={item.title}
             loading="lazy"
+            className='woven-image'
           />
         </ImageListItem>
       ))}
@@ -21,27 +22,27 @@ export default function WovenImageList() {
 
 const itemData = [
     {
-        img: 'https://images.unsplash.com/photo-1549388604-817d15aa0110',
-        title: 'Bed',
+        img: 'crowd.jpg',
+        title: 'Crowd',
       },
   {
-    img: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3',
-    title: 'Kitchen',
+    img: 'celebrating.png',
+    title: 'Celebrating',
   },
   {
-    img: 'https://images.unsplash.com/photo-1523413651479-597eb2da0ad6',
-    title: 'Sink',
+    img: 'pool.png',
+    title: 'Pool',
   },
   {
-    img: 'https://images.unsplash.com/photo-1525097487452-6278ff080c31',
-    title: 'Books',
+    img: 'business.png',
+    title: 'Business',
   },
   {
-    img: 'https://images.unsplash.com/photo-1574180045827-681f8a1a9622',
+    img: 'meeting.png',
     title: 'Chairs',
   },
   {
-    img: 'https://images.unsplash.com/photo-1597262975002-c5c3b14bbd62',
-    title: 'Candle',
+    img: 'happiness.png',
+    title: 'Smiles',
   },
 ];
