@@ -4,7 +4,7 @@ import PrimaryAppBar from "./components/AppBar";
 import './page.css' 
 import WovenImageList from './components/WovenImageList';
 import Image from 'next/image';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 
 export default function Home() {
 

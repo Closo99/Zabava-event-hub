@@ -14,31 +14,28 @@
 
 footer {
   display: flex;
-  flex-direction: column;  
-  gap: 20px; 
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
   padding: 10px;
   max-height: 320px;
   margin-top: 42px;
   margin-bottom: 22px;
-  margin-left: 22px;
+  margin-left: 12px;
 }
 
 .footer-tittles {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
+  max-width: 200px;
 }
 
 .footer-icons-socialmedia {
-  margin-top: 2px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   gap: 10px;
 }
 
 .footer-icons-localization {
-  margin-top: 6px;
-  display: flex;
-  flex-direction: row;
-  gap: 6px;
+
 }
