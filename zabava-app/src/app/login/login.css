@@ -3,10 +3,6 @@ html {
     background-color: white;
 }
 
-.login-page-box {
-    background-color: white;
-}
-
 header {
     display: flex;
     min-height: 57px;
@@ -17,15 +13,29 @@ header {
     justify-content: space-between;
 }
 
+
 .go-back-button {
     color: black;
-    text-transform: capitalize;
+    text-transform: capitalize;  
+}
+
+.go-back-button:hover {
+    background-color: #0000000d;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vw;
+    min-width: 375px;
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
-    min-width: 250px;
+    min-width: 375px;
     max-width: 500px;
     gap: 12px;
     padding: 12px;
@@ -57,6 +67,7 @@ header {
 .login-bottom-div {
     display: flex;
     flex-wrap: nowrap;
-    gap: 2px;
+    gap: 1px;
     justify-content: center;
+    font-size: small;
 }

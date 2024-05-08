@@ -12,17 +12,19 @@
   margin: 0;
 }
 
-footer {
+footer {  
+  background-color: #4D4D4D;
+}
+
+.footer-child {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   gap: 20px;
-  padding: 10px;
-  max-height: 320px;
-  margin-top: 42px;
-  margin-bottom: 22px;
-  margin-left: 12px;
-  background-color: #4D4D4D;
+  padding-top: 42px;
+  padding-left: 4%;
+  padding-bottom: 22px;
+  background-color: inherit;
 }
 
 .footer-tittles {
@@ -35,8 +37,4 @@ footer {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-}
-
-.footer-icons-localization {
-
 }
