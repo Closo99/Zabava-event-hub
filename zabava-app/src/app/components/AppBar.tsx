@@ -179,20 +179,22 @@ export default function PrimaryAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Image src="/zabava-logo.png"
-                width={30}
-                height={30}
-                loading='lazy'
-                alt="Logo Zabava"
-                id='logo-zabava' />
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' }, ml: 1, color: 'black' }}
-          >
-            Zabava
-          </Typography>
+          <MenuItem onClick={() => {router.push('/')}}>
+            <Image src="/zabava-logo.png"
+                  width={30}
+                  height={30}
+                  loading='lazy'
+                  alt="Logo Zabava"
+                  id='logo-zabava' />
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: 'none', sm: 'block' }, ml: 1, color: 'black' }}
+            >
+              Zabava
+            </Typography>
+          </MenuItem>
           <Search sx={{borderRadius: 6}}>
             <SearchIconWrapper>
               <CustomSearchIcon />

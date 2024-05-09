@@ -1,11 +1,12 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Button, FormControl, InputLabel, InputAdornment, IconButton, Input, Box, Link } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import './login.css';
 import {useRouter } from 'next/navigation'
 import PersonIcon from '@mui/icons-material/Person';
+import Footer from '../components/Footer';
 
 interface LoginProps {
     onLogin: (username: string, password: string) => void;
@@ -15,7 +16,6 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-    const [cssLoaded, setCssLoaded] = useState(false);
 
     const handleLogin = () => {
         // Aqui você pode realizar a autenticação, por exemplo, fazendo uma chamada de API
@@ -32,14 +32,10 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 
     const router = useRouter();
 
-    useEffect(() => {
-        setCssLoaded(true);
-    }, []);
-
     return (
         <Box className='login-page-box'>
             <header>
-                <Button className='go-back-button' variant='text' onClick={() => {router.push('/')}}><ArrowBackIosNewIcon color='disabled' />Voltar</Button>
+                <Button className='go-back-button' variant='text' onClick={() => router.back()}><ArrowBackIosNewIcon color='disabled' />Voltar</Button>
             </header>
             <div className='form'>
                 <PersonIcon color='disabled' sx={{ fontSize: 100 }} />
@@ -79,6 +75,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                 </div>
                 </Box>
             </div>
+            <Footer />
         </Box>
     );
 };

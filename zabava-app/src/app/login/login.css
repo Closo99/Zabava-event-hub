@@ -1,6 +1,6 @@
 
 html {
-    background-color: white;
+    background-color: #4D4D4D;
 }
 
 header {
@@ -13,6 +13,12 @@ header {
     justify-content: space-between;
 }
 
+.login-page-box {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 
 .go-back-button {
     color: black;
@@ -28,7 +34,8 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 10vw;
+    padding-bottom: 9%;
+    padding-top: 9%;
     min-width: 375px;
 }
 

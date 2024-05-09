@@ -9,8 +9,16 @@
     }        
 }
 
+.home-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+}
+
 /*after header*/
 .home-body {
+  flex-grow: 1;
   background-color: #4D4D4D;
 }
 
