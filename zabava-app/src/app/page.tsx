@@ -27,13 +27,13 @@ export default function Home() {
                   <span className="circle"></span>
                 </button>
 
-                <button className="explorar-evento" onClick={() => {router.push('/venues')}}>
+                <button className="explorar-locais" onClick={() => {router.push('/venues')}}>
                   <svg viewBox="0 0 24 24" className="arr-22" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
                     ></path>
                   </svg>
-                  <span className="text2">EXPLORAR EVENTOS</span>
+                  <span className="text2">EXPLORAR LOCAIS</span>
                   <span className="circle2"></span>
                   <svg viewBox="0 0 24 24" className="arr-12" xmlns="http://www.w3.org/2000/svg">
                     <path
