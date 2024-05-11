@@ -64,7 +64,14 @@ const neighborhoodName = [
     { title: 'Bigorrilho' },
     { title: 'Boa Vista' },
     { title: 'Campo Comprido' },
-    { title: 'Santa Felicidade' }
+    { title: 'Santa Felicidade' },
+    { title: 'Cristo Rei' },
+    { title: 'Centro Cívico' },
+    { title: 'Santo Inácio' },
+    { title: 'Jardim Botânico' },
+    { title: 'Ahú' },
+    { title: 'Tarumã' },
+    { title: 'Vila Izabel' }
 ]
 
 export default RenderGroup;

@@ -40,7 +40,87 @@ export default function Venues() {
       capacidade: 80,
       rank: 3,
       descricao: "Descrição do Local C"
-    }
+    },
+    {
+      nome: "Local D",
+      bairro: "Santa Felicidade",
+      endereco: "Endereço 4",
+      capacidade: 120,
+      rank: 4,
+      descricao: "Descrição do Local D"
+    },
+    {
+      nome: "Local E",
+      bairro: "Bigorrilho",
+      endereco: "Endereço 5",
+      capacidade: 70,
+      rank: 5,
+      descricao: "Descrição do Local E"
+    },
+    {
+      nome: "Local F",
+      bairro: "Cristo Rei",
+      endereco: "Endereço 6",
+      capacidade: 90,
+      rank: 3,
+      descricao: "Descrição do Local F"
+    },
+    {
+      nome: "Local G",
+      bairro: "Água Verde",
+      endereco: "Endereço 7",
+      capacidade: 60,
+      rank: 4,
+      descricao: "Descrição do Local G"
+    },
+    {
+      nome: "Local H",
+      bairro: "Centro Cívico",
+      endereco: "Endereço 8",
+      capacidade: 150,
+      rank: 5,
+      descricao: "Descrição do Local H"
+    },
+    {
+      nome: "Local I",
+      bairro: "Santo Inácio",
+      endereco: "Endereço 9",
+      capacidade: 80,
+      rank: 4,
+      descricao: "Descrição do Local I"
+    },
+    {
+      nome: "Local J",
+      bairro: "Jardim Botânico",
+      endereco: "Endereço 10",
+      capacidade: 100,
+      rank: 5,
+      descricao: "Descrição do Local J"
+    },
+    {
+      nome: "Local K",
+      bairro: "Ahú",
+      endereco: "Endereço 11",
+      capacidade: 110,
+      rank: 3,
+      descricao: "Descrição do Local K"
+    },
+    {
+      nome: "Local L",
+      bairro: "Tarumã",
+      endereco: "Endereço 12",
+      capacidade: 85,
+      rank: 4,
+      descricao: "Descrição do Local L"
+    },
+    {
+      nome: "Local M",
+      bairro: "Vila Izabel",
+      endereco: "Endereço 13",
+      capacidade: 95,
+      rank: 5,
+      descricao: "Descrição do Local M"
+    }    
   ];
 
   const hasNoResults = localData.filter(local => !selectedNeighborhood || local.bairro === selectedNeighborhood).length === 0;

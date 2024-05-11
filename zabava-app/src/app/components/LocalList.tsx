@@ -9,7 +9,7 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
+import { red, yellow } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -62,9 +62,9 @@ const LocalCard: React.FC<LocalCardProps> = ({ local }) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
       if (i < rank) {
-        stars.push(<StarIcon key={i} />);
+        stars.push(<StarIcon key={i} sx={{ color: yellow[700] }} />);
       } else {
-        stars.push(<StarBorderIcon key={i} />);
+        stars.push(<StarBorderIcon key={i} sx={{ color: yellow[700] }} />);
       }
     }
     return stars;

@@ -3,10 +3,12 @@ html {
     background-color: #4D4D4D;
 }
 
-header {
+.go-back-header {
     display: flex;
+    flex-grow: 1;
+    min-width: 100%;
     min-height: 57px;
-    max-height: 57px;
+    max-height: 67px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.14);
     background-color: white;
     align-items: center;
@@ -15,9 +17,6 @@ header {
 
 .login-page-box {
     background-color: white;
-    display: flex;
-    flex-direction: column;
-    position: relative;
 }
 
 .go-back-button {

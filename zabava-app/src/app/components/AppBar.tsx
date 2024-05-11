@@ -168,7 +168,8 @@ export default function PrimaryAppBar() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static"
       sx={{ borderBottom: '1px solid rgba(0, 0, 0, 0.14)',
-      backgroundColor: 'white'
+      backgroundColor: 'white',
+      boxShadow: 'none'
       }}>
         <Toolbar>
           <IconButton
