@@ -22,7 +22,7 @@ export default function Home() {
                 ao virtual, do pré ao pós-evento, tudo em um só lugar
               </p>
               <div className="home-call-to-action-buttons-container">
-              <button className="organizar-evento">                  
+              <button className="organizar-evento" onClick={() => {router.push('/createEvent')}}>                  
                   <span className="text">ORGANIZAR EVENTOS</span>
                   <span className="circle"></span>
                 </button>
@@ -56,7 +56,7 @@ export default function Home() {
                     loading='lazy'
                     alt="Fast clock image"
                     id='fast-clock-image' />
-                <p>MAIS RAPIZES PARA SEUS EVENTOS</p>
+                <p>MAIS RAPIDEZ PARA SEUS EVENTOS</p>
               </div>
               <div id='eficiency-icon-container'>
                 <Image

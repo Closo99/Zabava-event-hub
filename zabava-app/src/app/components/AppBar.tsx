@@ -162,7 +162,7 @@ export default function PrimaryAppBar() {
         <p>Profile</p>
       </MenuItem>
     </Menu>
-  );
+  );  
 
   return (
     <Box sx={{ flexGrow: 1 }}>
