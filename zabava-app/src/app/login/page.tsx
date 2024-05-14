@@ -37,7 +37,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
             <header className='go-back-header'>
                 <Button className='go-back-button' variant='text' onClick={() => router.back()}><ArrowBackIosNewIcon color='disabled' />Voltar</Button>
             </header>
-            <div className='form'>
+            <div className='login-form'>
                 <PersonIcon color='disabled' sx={{ fontSize: 100 }} />
                 <Box className='form-container'>
                 <FormControl className='username-box'>
