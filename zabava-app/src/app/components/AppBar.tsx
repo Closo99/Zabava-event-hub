@@ -108,8 +108,8 @@ export default function PrimaryAppBar() {
       onClose={handleMenuClose}
     >
       <MenuItem onClick={() => {router.push('/login')}}>Login</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={() => {router.push('/register')}}>Register</MenuItem>
+      <MenuItem onClick={() => {router.push('/profile')}}>Profile</MenuItem>
     </Menu>
   );
 

@@ -176,8 +176,8 @@
   
   .explorar-locais:hover {
     box-shadow: 0 0 0 12px transparent;
-    color: #000000;
     border-color: white;
+    color: white;
   }
   
   .explorar-locais:hover .arr-12 {
@@ -193,7 +193,7 @@
   }
   
   .explorar-locais:hover svg {
-    fill: #212121;
+    fill: white;
   }
   
   .explorar-locais:active {
