@@ -1,147 +1,122 @@
-'use client';
+'use client'
 import React, { useState } from 'react';
-import { Button, FormControl, InputLabel, InputAdornment, IconButton, Input, Box, Typography } from '@mui/material';
+import { Button, FormControl, InputLabel, InputAdornment, IconButton, Input, Box, Link } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { useRouter } from 'next/navigation';
-import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import './register.css';
-import ArrowBackIosNewIcon  from '@mui/icons-material/ArrowBackIosNew';
+import { useRouter } from 'next/navigation';
+import PersonIcon from '@mui/icons-material/Person';
 import Footer from '../components/Footer';
 
-interface User {
-  username: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
+interface RegisterProps {
+    onRegister: (fullname: string, username: string, password: string) => void;
 }
 
-const UserRegistration: React.FC = () => {
-  const [user, setUser] = useState<User>({
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
+const Register: React.FC<RegisterProps> = ({ onRegister }) => {
+    const [fullname, setFullname] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [errors, setErrors] = useState<Partial<User>>({});
+    const handleRegister = () => {
+        // Aqui você pode realizar a autenticação, por exemplo, fazendo uma chamada de API
+        if (password === confirmPassword) {
+            onRegister(fullname, username, password);
+        } else {
+            // Exibir uma mensagem de erro sobre senhas não coincidentes
+            alert('As senhas não coincidem.');
+        }
+    };
 
-  const router = useRouter();
+    const handleClickShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setUser({ ...user, [name]: value });
-  };
+    const handleClickShowConfirmPassword = () => {
+        setShowConfirmPassword(!showConfirmPassword);
+    };
 
-  const validate = () => {
-    const newErrors: Partial<User> = {};
-    if (!user.username) newErrors.username = 'O nome de usuário é obrigatório.';
-    if (!user.email) newErrors.email = 'O email é obrigatório.';
-    if (!user.password) newErrors.password = 'A senha é obrigatória.';
-    if (user.password !== user.confirmPassword) newErrors.confirmPassword = 'As senhas não coincidem.';
-    return newErrors;
-  };
+    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
+        event.preventDefault();
+    };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formErrors = validate();
-    if (Object.keys(formErrors).length === 0) {
-      console.log('Form submitted:', user);
-      // API call
-    } else {
-      setErrors(formErrors);
-    }
-  };
+    const router = useRouter();
 
-  const handleClickShowPassword = () => {
-    setShowPassword(!showPassword);
-  };
-
-  const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-  };
-
-  return (
-    <Box className='registration-page-box'>
-      <header className='go-back-header'>
-        <Button className='go-back-button' variant='text' onClick={() => router.back()}>
-          <ArrowBackIosNewIcon color='disabled' />Voltar
-        </Button>
-      </header>
-      <div className='register-form'>
-        <PersonAddIcon color='disabled' sx={{ fontSize: 100 }} />
-        <Box className='form-container'>
-          <form onSubmit={handleSubmit}>
-            <FormControl className='input-box' fullWidth margin="normal">
-              <InputLabel htmlFor="standard-adornment-username">Nome de Usuário</InputLabel>
-              <Input
-                id="standard-adornment-username"
-                name="username"
-                value={user.username}
-                onChange={handleChange}
-              />
-              {errors.username && <Typography className="error">{errors.username}</Typography>}
-            </FormControl>
-            <FormControl className='input-box' fullWidth margin="normal">
-              <InputLabel htmlFor="standard-adornment-email">Email</InputLabel>
-              <Input
-                id="standard-adornment-email"
-                name="email"
-                value={user.email}
-                onChange={handleChange}
-              />
-              {errors.email && <Typography className="error">{errors.email}</Typography>}
-            </FormControl>
-            <FormControl className='input-box' fullWidth margin="normal">
-              <InputLabel htmlFor="standard-adornment-password">Senha</InputLabel>
-              <Input
-                id="standard-adornment-password"
-                name="password"
-                type={showPassword ? 'text' : 'password'}
-                value={user.password}
-                onChange={handleChange}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                    >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-              />
-              {errors.password && <Typography className="error">{errors.password}</Typography>}
-            </FormControl>
-            <FormControl className='input-box' fullWidth margin="normal">
-              <InputLabel htmlFor="standard-adornment-confirm-password">Confirme a Senha</InputLabel>
-              <Input
-                id="standard-adornment-confirm-password"
-                name="confirmPassword"
-                type={showPassword ? 'text' : 'password'}
-                value={user.confirmPassword}
-                onChange={handleChange}
-                endAdornment={
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                    >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment>
-                }
-              />
-              {errors.confirmPassword && <Typography className="error">{errors.confirmPassword}</Typography>}
-            </FormControl>
-            <Button className='register-button' variant="contained" type="submit">Registrar</Button>
-          </form>
+    return (
+        <Box className='register-page-box'>
+            <header className='go-back-header'>
+                <Button className='go-back-button' variant='text' onClick={() => router.back()}><ArrowBackIosNewIcon color='disabled' />Voltar</Button>
+            </header>
+            <div className='register-form'>
+                <PersonIcon color='disabled' sx={{ fontSize: 100 }} />
+                <Box className='form-container'>
+                <FormControl className='fullname-box'>
+                    <InputLabel htmlFor="standard-adornment-fullname">Nome Completo</InputLabel>
+                    <Input
+                        id="standard-adornment-fullname"
+                        value={fullname}
+                        onChange={(e) => setFullname(e.target.value)}
+                    />
+                </FormControl>
+                <FormControl className='username-box'>
+                    <InputLabel htmlFor="standard-adornment-username">Username</InputLabel>
+                    <Input
+                        id="standard-adornment-username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                </FormControl>
+                <FormControl className='password-box'>
+                    <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                    <Input
+                        id="standard-adornment-password"
+                        type={showPassword ? 'text' : 'password'}
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password visibility"
+                                    onClick={handleClickShowPassword}
+                                    onMouseDown={handleMouseDownPassword}
+                                >
+                                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                    />
+                </FormControl>
+                <FormControl className='confirm-password-box'>
+                    <InputLabel htmlFor="standard-adornment-confirm-password">Confirmar Password</InputLabel>
+                    <Input
+                        id="standard-adornment-confirm-password"
+                        type={showConfirmPassword ? 'text' : 'password'}
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle confirm password visibility"
+                                    onClick={handleClickShowConfirmPassword}
+                                    onMouseDown={handleMouseDownPassword}
+                                >
+                                    {showConfirmPassword ? <VisibilityOff /> : <Visibility />}
+                                </IconButton>
+                            </InputAdornment>
+                        }
+                    />
+                </FormControl>
+                <Button className='register-button' variant="contained" onClick={handleRegister}>Registrar</Button>
+                <div className='register-bottom-div'>
+                    <p>Já possui uma conta na Zabava?</p><Link className='login-link' href="#" variant="body2">Login</Link>
+                </div>
+                </Box>
+            </div>
+            <Footer />
         </Box>
-      </div>
-    </Box>
-  );
+    );
 };
 
-export default UserRegistration;
+export default Register;
